@@ -1,0 +1,43 @@
+{
+  "agent": {
+    "name": "web-vitals-agent",
+    "version": "1.0.0",
+    "created": "2026-03-02",
+    "repository": "9TEVE-O/web-vitals",
+    "purpose": "Maintain and improve the web-vitals library, which measures Core Web Vitals metrics (CLS, INP, LCP, FCP, TTFB) accurately on real users."
+  },
+  "capabilities": {
+    "can_do": [
+      "create and update files within the repo",
+      "open PRs on feature or fix branches",
+      "write and run tests",
+      "update dependencies to stable versions",
+      "generate documentation"
+    ],
+    "cannot_do": [
+      "push to main or master",
+      "access external APIs without credentials in .env",
+      "modify files outside this repository",
+      "delete files confirmed to have active references",
+      "make breaking changes without a migration path",
+      "introduce runtime dependencies"
+    ]
+  },
+  "boundaries": {
+    "max_files_per_pr": 20,
+    "max_lines_per_function": 40,
+    "max_lines_per_file": 300,
+    "branch_prefix": "agent/",
+    "pr_label": "agent-generated"
+  },
+  "contacts": {
+    "human_review_required_for": [
+      "public API changes",
+      "major or minor version bumps",
+      "security-related code",
+      "merge conflicts involving business logic",
+      "changes to CI/CD pipelines",
+      "changes to browser compatibility targets"
+    ]
+  }
+}
