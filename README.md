@@ -24,6 +24,7 @@
 - [Limitations](#limitations)
 - [Development](#development)
 - [Integrations](#integrations)
+- [GitHub Copilot Agent](#github-copilot-agent)
 - [License](#license)
 
 ## Overview
@@ -1187,6 +1188,24 @@ You'll likely want to combine this with `npm run watch` to ensure any changes yo
 - [**Web Vitals Connector**](https://goo.gle/web-vitals-connector): Data Studio connector to create dashboards from [Web Vitals data captured in BigQuery](https://web.dev/articles/vitals-ga4).
 - [**Core Web Vitals Custom Tag template**](https://www.simoahava.com/custom-templates/core-web-vitals/): Custom GTM template tag to [add measurement handlers](https://www.simoahava.com/analytics/track-core-web-vitals-in-ga4-with-google-tag-manager/) for all Core Web Vitals metrics.
 - [**`web-vitals-reporter`**](https://github.com/treosh/web-vitals-reporter): JavaScript library to batch `callback` functions and send data with a single request.
+
+## GitHub Copilot Agent
+
+This repository is configured with **web-vitals-agent**, a GitHub Copilot coding agent that understands the library's architecture, coding standards, and test requirements. The agent's full identity and rules are defined in [`.github/copilot-instructions.md`](.github/copilot-instructions.md).
+
+### What the agent does
+
+The agent can create and update source files, write tests, update documentation, fix CI/CD pipelines, and open pull requests — all while following the conventions established in this codebase. It will never push directly to `main`, commit secrets, break existing tests, or change public API signatures without a migration path.
+
+### Assigning a task to the agent
+
+1. Open a new issue and select the **Agent Task** template.
+2. Fill in the task description, the target files or directories, any constraints (what not to change), and a clear definition of done.
+3. Submit the issue. The agent will pick it up, implement the changes on an `agent/` branch, and open a pull request linking back to the issue.
+
+### What the agent will not do
+
+The agent will not modify `dist/` directly, introduce runtime dependencies, change public API signatures without a major version bump, or push to `main`. Changes to auth-related code, schema migrations, and public API surface always require human review before merging.
 
 ## License
 

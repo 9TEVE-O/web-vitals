@@ -1,6 +1,13 @@
 .DS_Store
+Thumbs.db
 .vscode
 node_modules
+dist
+build
+.next
+out
+__pycache__
+*.pyc
 
 # Log files
 *.log
@@ -8,5 +15,11 @@ node_modules
 # Generated TypeScript files and build data
 tsconfig.tsbuildinfo
 
-# Dist files
-dist
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Coverage
+coverage
+.nyc_output
